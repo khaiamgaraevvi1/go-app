@@ -8,13 +8,13 @@ func main() {
 	app := fiber.New()
 
 	app.Get("/", func(c *fiber.Ctx) error {
-		return c.SendString("Salam, Dünya! 👋")
+		return c.SendString("Hello, World!")
 	})
 
-	app.Get("/about", func(c *fiber.Ctx) error {
+	app.Get("/app-info", func(c *fiber.Ctx) error {
 		return c.JSON(fiber.Map{
-			"author": "Xəyyam",
-			"app":    "Go Fiber Project",
+			"app":     "My Fiber App",
+			"version": "1.0.0",
 		})
 	})
 
